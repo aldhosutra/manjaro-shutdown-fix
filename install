@@ -12,11 +12,11 @@ elif [ -z "${check}" ] ; then
 fi;
 
 echo "Preparing Files...";
-sudo cp ./bin/K32Power-control-on.sh /usr/bin/K32Power-control-on.sh;
+sudo cp bin/K32Power-control-on.sh /usr/bin/K32Power-control-on.sh;
 sudo chmod +x /usr/bin/K32Power-control-on.sh;
 
 echo "Preparing Service File...";
-sudo cp myservice.service /etc/systemd/system/manjaro-shutdown-fix.service;
+sudo cp bin/manjaro-shutdown-fix.service /etc/systemd/system/manjaro-shutdown-fix.service;
 sudo chmod 644 /etc/systemd/system/manjaro-shutdown-fix.service;
 
 echo "Starting Service...";
