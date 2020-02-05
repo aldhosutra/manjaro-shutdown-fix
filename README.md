@@ -3,7 +3,7 @@ Fix Reboot Instead of Shutdown in Manjaro
 
 ## Credits
 
-Instruction and Source File are come from:
+Inspiration and Source File are come from:
 
 [This Youtube Vide](https://www.youtube.com/watch?v=dLUCk9JOORA) 
 
