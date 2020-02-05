@@ -4,7 +4,12 @@ Fix Reboot Instead of Shutdown in Manjaro
 ## Credits
 
 Instruction and Source File are come from:
-[This Link](https://www.youtube.com/watch?v=dLUCk9JOORA)
+
+[This Youtube Vide](https://www.youtube.com/watch?v=dLUCk9JOORA) 
+
+And
+
+[This Linode Docs](https://www.linode.com/docs/quick-answers/linux/start-service-at-boot/)
 
 ## Installing
 

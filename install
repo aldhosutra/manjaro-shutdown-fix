@@ -20,6 +20,7 @@ sudo cp bin/manjaro-shutdown-fix.service /etc/systemd/system/manjaro-shutdown-fi
 sudo chmod 644 /etc/systemd/system/manjaro-shutdown-fix.service;
 
 echo "Starting Service...";
+sudo systemctl daemon-reload;
 sudo systemctl start manjaro-shutdown-fix;
 sudo systemctl enable manjaro-shutdown-fix;
 
