@@ -1,0 +1,35 @@
+#!/bin/bash
+
+echo "manjaro-shutdown-fix v.0.0.1";
+echo "(C) Aldo Suhartono Putra";
+
+package="laptop-mode-tools";
+check="$(sudo pacman -Qs --color always "${package}" | grep "local" | grep "${package} ")";
+if [ -n "${check}" ] ; then
+    echo "${package} is installed, continue installation";
+elif [ -z "${check}" ] ; then
+    echo "${package} is NOT installed, will install"; pamac build laptop-mode-tools --no-confirm;
+fi;
+
+echo "Preparing Files...";
+sudo cp ./bin/K32Power-control-on.sh /usr/bin/K32Power-control-on.sh;
+sudo chmod +x /usr/bin/K32Power-control-on.sh;
+
+echo "Preparing Service File...";
+sudo cp myservice.service /etc/systemd/system/manjaro-shutdown-fix.service;
+sudo chmod 644 /etc/systemd/system/manjaro-shutdown-fix.service;
+
+echo "Starting Service...";
+sudo systemctl start manjaro-shutdown-fix;
+sudo systemctl enable manjaro-shutdown-fix;
+
+echo "Done...";
+
+while true; do
+    read -p "Do You Want To Reboot Now? [y/n]" yn
+    case $yn in
+        [Yy]* ) sudo reboot; break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done

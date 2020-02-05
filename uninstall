@@ -1,0 +1,10 @@
+#!/bin/bash
+
+while true; do
+    read -p "Are You Sure Want To Uninstall manjaro-shutdown-fix? [y/n]" yn
+    case $yn in
+        [Yy]* ) sudo systemctl stop myservice; sudo rm /usr/bin/K32Power-control-on.sh; sudo rm /etc/systemd/system/manjaro-shutdown-fix.service; break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done

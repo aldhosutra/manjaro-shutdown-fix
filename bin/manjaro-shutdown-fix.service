@@ -1,0 +1,9 @@
+[Unit]
+Description=Manjaro Shutdown Fix (C) Aldo Suhartono Putra - aldhosutra@gmail.com.
+
+[Service]
+Type=simple
+ExecStart=/bin/bash /usr/bin/K32Power-control-on.sh
+
+[Install]
+WantedBy=multi-user.target
